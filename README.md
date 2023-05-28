@@ -1,7 +1,7 @@
-4chan-downloader
+4chan-picrel
 ================
-
-Python script to download all images/webms of a 4chan thread
+This is a fork of the [4chan-downloader](https://github.com/Exceen/4chan-downloader) script. 
+It has all functionality of the original script, but it remembers which files were downloaded in each thread, therefore making montioring thread unnecessary and optional.
 
 ### Download Script ###
 
