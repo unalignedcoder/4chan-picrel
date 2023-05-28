@@ -34,7 +34,7 @@ To re-download all files again, you can just delete the `json` file and re-run t
 
 To re-download single files, just delete the respective lines inside the `json` file and re-run the script.
 
-You can parse a file instead of a thread url. In this file you can put as many links as you want, you just have to make sure that there's one url per line. A line is considered to be a url if the first 4 letters of the line start with 'http'.
+You can parse a queue file instead of a thread url. In this file you can put as many links as you want, you just have to make sure that there's one url per line. A line is considered to be a url if the first 4 letters of the line start with 'http'.
 
 If you use the --use-names argument, the thread name is used to name the respective thread directory instead of the thread id.
 
@@ -44,11 +44,11 @@ This script can be called using the default python libraries. Only if you want t
 * Beautifulsoup4 >= 4.12.2 `pip install beautifulsoup4`
 * Django >= 4.2.1 `pip install django`
 
-### Thread List Creator ###
+### Queue List Creator ###
 
 This is a work-in-progress script but basic functionality is already given. If you call the script like
 
-`python thread-watcher.py -b vg -q mhg -f queue.txt -n "Monster Hunter"`
+`python queue-creator.py -b vg -q mhg -f queue.txt -n "Monster Hunter"`
 
 then it looks for all threads titles that include `mhg` inside the `vg` board, stores the thread url into `queue.txt` and adds `/Monster-Hunter` at the end of the url so that you can use the --use-names argument from the actual download script.
 
