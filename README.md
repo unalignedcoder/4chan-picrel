@@ -6,7 +6,7 @@ It records which files have been downloaded in each thread to a json file, there
 It also solves a redundancy of the original script, that by default duplicated all threads. 
 It aims to quickly solve other issues as well, including making the documentation clearer.
 
-### Download Script ###
+### Main Download Script ###
 
 The main script is called **picrel.py**.
 
