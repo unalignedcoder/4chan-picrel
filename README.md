@@ -26,8 +26,8 @@ optional arguments:
   -t, --title         save original filenames
   -m, --monitor       keep monitoring a fast thread
 ```
-The script creates a `/<board name>/<thread id or thread name>/` folder where all media files are saved.
-Alist of all downloaded files is progressivley recorded in a `downloaded_files.json` file, which is saved within the same folder. 
+The script creates a `/downloads/<board name>/<thread id or thread name>/` folder where all media files are saved.
+A list of all downloaded files is progressivley recorded in a `downloaded_files.json` file, which is saved within the same folder. 
 
 To re-download all files again, you can just delete the `json` file and re-run the script. 
 To re-download single files, just delete the respective lines inside the `json` file and re-run the script.
