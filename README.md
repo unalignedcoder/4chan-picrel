@@ -40,8 +40,6 @@ You can parse a queue file instead of a thread url. In this file you can put as 
 
 The queue file can also be generated via the Queue List Creator. See below.
 
-If you use the --use-names argument, the thread name is used to name the respective thread directory instead of the thread id.
-
 ### Requirements ###
 
 This script can be called using the default python libraries. Only if you want to use the `--use-names` or `--title` parameters you have to install the following dependencies:
