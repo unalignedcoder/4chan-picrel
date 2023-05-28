@@ -8,7 +8,7 @@ It has all functionality of the original script, but it remembers which files we
 The main script is called **picrel.py** and can be called like this: `python picrel.py [thread/filename]`
 
 ```
-usage: picrel.py [-h] [-c] [-d] [-l] [-n] [-r] [-t] thread
+usage: picrel.py [-h] [-c] [-d] [-l] [-n] [-r] [-t] [-m] thread
 
 positional arguments:
   thread              url of the thread (or filename; one url per line)
