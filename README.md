@@ -26,6 +26,10 @@ optional arguments:
   -t, --title         save original filenames
   -m, --monitor       keep monitoring a fast thread
 ```
+All downloaded files are recorded in a `downloaded_files.json` file, which is saved in its thread folder. 
+
+To re-download all files again, you can just delete the `json` file. 
+To re-download single files, just delete the respective lines inside the `json` file.
 
 You can parse a file instead of a thread url. In this file you can put as many links as you want, you just have to make sure that there's one url per line. A line is considered to be a url if the first 4 letters of the line start with 'http'.
 
