@@ -8,6 +8,7 @@ import json
 
 log = logging.getLogger('picrel')
 workpath = os.path.dirname(os.path.realpath(__file__))
+
 args = None
 
 def main():
@@ -37,6 +38,7 @@ def main():
             args.title = False
 
     thread = args.thread[0].strip()
+
     if thread[:4].lower() == 'http':
         download_thread(thread, args)
     else:
@@ -68,7 +70,7 @@ def call_download_thread(thread_link, args, downloaded_files):
     except KeyboardInterrupt:
         pass
 
-def download_thread(thread_link, args):
+def download_thread(thread_link, args, downloaded_files):
     board = thread_link.split('/')[3]
     thread = thread_link.split('/')[5].split('#')[0]
     if len(thread_link.split('/')) > 6:
@@ -138,12 +140,6 @@ def download_thread(thread_link, args):
             log.fatal(thread_link + ' crashed!')
             raise
 
-        # try:
-        #     if not new_files_downloaded:
-        #         raise Exception('No new media files to download. Operation stopped.')
-        # except Exception as e:
-        #     log.exception(e)
-
         if not new_files_downloaded:
             log.info('No new media files to download. Operation stopped.')
             save_downloaded_files(downloaded_files, thread_folder)  # Save the downloaded files to the JSON file
@@ -162,12 +158,19 @@ def download_from_file(filename):
     running_links = []
     while True:
         processes = []
-        for link in [_f for _f in [line.strip() for line in open(filename) if line[:4] == 'http'] if _f]:
+        #queue_file = os.path.join(os.path.abspath(workpath), filename)
+        queue_file = workpath + filename
+        #log.info('your queue path:' + queue_file)
+        for link in [_f for _f in [line.strip() for line in open(queue_file) if line[:4] == 'http'] if _f]:
             if link not in running_links:
                 running_links.append(link)
                 log.info('Added ' + link)
 
-            downloaded_files = load_downloaded_files()
+            board = link.split('/')[3]
+            thread = link.split('/')[5].split('#')[0]
+            thread_folder = os.path.join(workpath, 'downloads', board, thread)
+
+            downloaded_files = load_downloaded_files(thread_folder)
             process = Process(target=call_download_thread, args=(link, args, downloaded_files))
             process.start()
             processes.append([process, link])
