@@ -30,7 +30,7 @@ optional arguments:
 ```
 The script creates a `/downloads/<board name>/<thread id or thread name>/` folder where all media files are saved.
 
-A list of all downloaded files is progressivley recorded in a `downloaded_files.json` file, which is saved within the same folder. 
+A list of all downloaded files is progressivley recorded in `downloaded_files.json`, which is saved within the same folder. 
 
 To re-download all files again, you can just delete the `json` file and re-run the script.
 
