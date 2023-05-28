@@ -2,6 +2,7 @@
 ================
 This is a fork of the [4chan-downloader](https://github.com/Exceen/4chan-downloader) script. 
 It has all functionality of the original script, but it remembers which files were downloaded in each thread, therefore making continuosly montioring a thread optional.
+It solves a problem with the original script, that by default duplicated all threads. It aims to quickly solve other issues as well.
 
 ### Download Script ###
 
