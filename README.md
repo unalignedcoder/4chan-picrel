@@ -38,7 +38,7 @@ To re-download single files, just delete the respective lines inside the `json` 
 
 You can parse a queue file instead of a thread url. In this file you can put as many links as you want, you just have to make sure that there's one url per line. A line is considered to be a url if the first 4 letters of the line start with 'http'.
 
-The queue file can also be generated via the Queue List Creator. See below.
+The queue file can also be generated via the [Queue List Creator](https://github.com/unalignedcoder/4chan-picrel/blob/master/README.md#queue-list-creator). See below.
 
 ### Requirements ###
 
