@@ -58,7 +58,7 @@ arguments:
   -q, --query         the search terms(supports regex). This is required.
   -f, --queuefile     the name and extension of the queue file. This is required.
   -b, --board         the board name to search within
-  -n, --naming        name of the seacrh (can be later used to name the directory where to save the threads)
+  -n, --naming        name of the search (can be later used to name the directory where to save the threads)
   -u, --thread-url    base urls of the chan boards  (default: https://boards.4chan.org/{board}/thread/{id}/{name})
   -a, --api-url       base url of the chans api (default: https://a.4cdn.org/{board}/catalog.json)
   -d, --directory     use or create the {board}/{name} directory, and place the queue file there
