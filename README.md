@@ -46,15 +46,23 @@ This script can be called using the default python libraries. Only if you want t
 
 ### Queue List Creator ###
 
-This is a work-in-progress script but basic functionality is already given. If you call the script like
+This script generates a queue list text file, which can be used by the main script to simultaneusly download media files from several threads. The user can specify several criteria to generate the list.
 
-`python queue-creator.py -b vg -q mhg -f queue.txt -n "Monster Hunter"`
+```
+example usage: python queue-creator.py -b {board name} -q {text to search for in thread titles} -f {name of the file to save} -n {name of the directory}
 
-then it looks for all threads titles that include `mhg` inside the `vg` board, stores the thread url into `queue.txt` and adds `/Monster-Hunter` at the end of the url so that you can use the --use-names argument from the actual download script.
+arguments:
+  -q, --query     the search terms(supports regex). This is required.
+  -f, --queuefile     the name and extension of the queue file. This is required.
+  -b, --board     the board name to search within
+  -n, --naming      name of the directory where to save the threads
+  -u, --thread-url  base urls of the chan boards  (default: https://boards.4chan.org/{board}/thread/{id}/{name})')
+  -a, --api-url     base url of the chans api (default: https://a.4cdn.org/{board}/catalog.json)')
+  -d, --directory     use or create the {board}/{name} directory, and place the queue file there
 
-### Legacy ###
+```
 
-The current scripts are written in python3, in case you still use python2 you can use an old version of the script inside the legacy directory.
+The script will looks for all threads titles that include `-q` inside the `-b` board, stores the thread url into `-f` and adds `-n` at the end of the url so that you can parse that value when using the `--use-names` argument from the actual download script.
 
 ### TODO ###
 
