@@ -4,7 +4,7 @@ This is a fork of the [4chan-downloader](https://github.com/Exceen/4chan-downloa
 It retains most functionality from the original script, with considerable improvements. 
 It records which files have been downloaded in each thread to a json file, therefore making continuosly montioring a thread optional.
 It also solves a redundancy of the original script, that by default duplicated all threads. 
-It aims to quickly solve other issues as well.
+It aims to quickly solve other issues as well, including making the documentation clearer.
 
 ### Download Script ###
 
