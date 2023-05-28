@@ -32,7 +32,7 @@ If you use the --use-names argument, the thread name is used to name the respect
 
 ### Requirements ###
 
-This script can be called using the default python libraries. Only if you want to use the `--use-names` or `--title` parameters you have to install the following requirements:
+This script can be called using the default python libraries. Only if you want to use the `--use-names` or `--title` parameters you have to install the following dependencies:
 * Beautifulsoup4 >= 4.12.2 `pip install beautifulsoup4`
 * Django >= 4.2.1 `pip install django`
 
