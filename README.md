@@ -44,13 +44,13 @@ This script can be called using the default python libraries. Only if you want t
 * Beautifulsoup4 >= 4.12.2 `pip install beautifulsoup4`
 * Django >= 4.2.1 `pip install django`
 
-### Thread Watcher ###
+### Thread List Creator ###
 
 This is a work-in-progress script but basic functionality is already given. If you call the script like
 
 `python thread-watcher.py -b vg -q mhg -f queue.txt -n "Monster Hunter"`
 
-then it looks for all threads that include `mhg` inside the `vg` board, stores the thread url into `queue.txt` and adds `/Monster-Hunter` at the end of the url so that you can use the --use-names argument from the actual download script.
+then it looks for all threads titles that include `mhg` inside the `vg` board, stores the thread url into `queue.txt` and adds `/Monster-Hunter` at the end of the url so that you can use the --use-names argument from the actual download script.
 
 ### Legacy ###
 
