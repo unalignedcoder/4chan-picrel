@@ -66,7 +66,3 @@ arguments:
 ```
 
 The script will look for all threads titles that include `--query` inside the `--board` board, store the thread url into `--queuefile` and add `--naming` at the end of the url so that you can parse that value later, when using the `--use-names` argument from the actual download script.
-
-### TODO ###
-
-fix duplicated filenames when running with `--title`
