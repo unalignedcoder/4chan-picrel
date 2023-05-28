@@ -8,10 +8,10 @@ It aims to quickly solve other issues as well, including making the documentatio
 
 ### Download Script ###
 
-The main script is called **picrel.py** and can be called like this: `python picrel.py [thread/queue]`
+The main script is called **picrel.py**.
 
 ```
-usage: picrel.py [-h] [-c] [-d] [-l] [-n] [-r] [-t] [-m] thread/queue
+usage: python picrel.py [-h] [-c] [-d] [-l] [-n] [-r] [-t] [-m] thread/queue
 
 positional arguments:
   thread              url of the thread (or queue text file which contains one url per line)
