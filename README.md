@@ -51,15 +51,16 @@ This script can be called using the default python libraries. Only if you want t
 This script generates a queue list text file, which can be used by the main script to simultaneusly download media files from several threads. The user can specify several criteria to generate the list.
 
 ```
-example usage: python queue-creator.py -b {board name} -q {text to search for in thread titles} -f {name of the file to save} -n {name of the directory}
+usage: python queue-creator.py [-q] {search term} [-f] {file name} [-b] {board name} [-n] {name of the search} 
+    [-u] [-a] [-d] {specify whether to save the queue file under a board/directory path}
 
 arguments:
   -q, --query         the search terms(supports regex). This is required.
   -f, --queuefile     the name and extension of the queue file. This is required.
   -b, --board         the board name to search within
-  -n, --naming        name of the directory where to save the threads
-  -u, --thread-url    base urls of the chan boards  (default: https://boards.4chan.org/{board}/thread/{id}/{name})')
-  -a, --api-url       base url of the chans api (default: https://a.4cdn.org/{board}/catalog.json)')
+  -n, --naming        name of the seacrh (can be later used to name the directory where to save the threads)
+  -u, --thread-url    base urls of the chan boards  (default: https://boards.4chan.org/{board}/thread/{id}/{name})
+  -a, --api-url       base url of the chans api (default: https://a.4cdn.org/{board}/catalog.json)
   -d, --directory     use or create the {board}/{name} directory, and place the queue file there
 
 ```
