@@ -6,11 +6,8 @@ import json
 import re
 import os
 
-# ./queue-creator.py -b hr -q art -f queue.txt -n "Art thread"
-
 API_URL_TEMPLATE = 'https://a.4cdn.org/{board}/catalog.json'
 THREAD_URL_TEMPLATE = 'https://boards.4chan.org/{board}/thread/{id}/{name}'
-
 
 def get_threads(board, url_template=None):
     template = url_template or API_URL_TEMPLATE
