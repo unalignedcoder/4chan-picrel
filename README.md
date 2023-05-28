@@ -5,10 +5,10 @@ It has all functionality of the original script, but it remembers which files we
 
 ### Download Script ###
 
-The main script is called inb4404.py and can be called like this: `python picrel.py [thread/filename]`
+The main script is called **picrel.py** and can be called like this: `python picrel.py [thread/filename]`
 
 ```
-usage: inb4404.py [-h] [-c] [-d] [-l] [-n] [-r] [-t] thread
+usage: picrel.py [-h] [-c] [-d] [-l] [-n] [-r] [-t] thread
 
 positional arguments:
   thread              url of the thread (or filename; one url per line)
@@ -32,7 +32,9 @@ If you use the --use-names argument, the thread name is used to name the respect
 
 ### Requirements ###
 
-This script can be called using the default python libraries. Only if you want to use the `--use-names` parameter you have to install the dependencies from the `requirements.txt`-file. This can be done by calling `pip install -r requirements.txt`.
+This script can be called using the default python libraries. Only if you want to use the `--use-names` or `--title` parameters you have to install the dependencies from the following requirments:
+# beautifulsoup4 >= 4.12.2 `pip install beautifulsoup4`
+# Django >= 4.2.1 `pip install django`
 
 ### Thread Watcher ###
 
