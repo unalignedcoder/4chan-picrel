@@ -38,6 +38,8 @@ To re-download single files, just delete the respective lines inside the `json` 
 
 You can parse a queue file instead of a thread url. In this file you can put as many links as you want, you just have to make sure that there's one url per line. A line is considered to be a url if the first 4 letters of the line start with 'http'.
 
+The queue file can also be generated via the Queue List Creator. See below.
+
 If you use the --use-names argument, the thread name is used to name the respective thread directory instead of the thread id.
 
 ### Requirements ###
