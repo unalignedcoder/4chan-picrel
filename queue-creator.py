@@ -4,12 +4,9 @@ from urllib import request
 import argparse
 import json
 import re
+import os
 
-# TODO
-# add argument to have something like vg/monster-hunter/ and inside that dir all threads separated by their id
-
-# ./thread-watcher.py -b vg -q mhg -f queue.txt -n "Monster Hunter"
-
+# ./queue-creator.py -b hr -q art -f queue.txt -n "Art thread"
 
 API_URL_TEMPLATE = 'https://a.4cdn.org/{board}/catalog.json'
 THREAD_URL_TEMPLATE = 'https://boards.4chan.org/{board}/thread/{id}/{name}'
@@ -34,13 +31,22 @@ def main():
     parser.add_argument('-n', '--naming', help='dir name for saved threads', required=True)
     parser.add_argument('-u', '--thread-url', help='base url of the chans boards (default: https://boards.4chan.org/{board}/thread/{id}/{name})')
     parser.add_argument('-a', '--api-url', help='base url of the chans api (default: https://a.4cdn.org/{board}/catalog.json)')
+    parser.add_argument('-d', '--directory', action='store_true', help='use or create the {board}/{name} directory, and place the queue file there')
     args = parser.parse_args()
 
     url_template = args.thread_url or THREAD_URL_TEMPLATE
     name = args.naming.lower().replace(' ', '-')
-    file = open(args.queuefile, 'a+')
-    file.seek(0)
     query = re.compile(args.query)
+
+    if args.directory:
+        directory_path = os.path.join(args.board, name)
+        os.makedirs(directory_path, exist_ok=True)
+        queue_file_path = os.path.join(directory_path, args.queuefile)
+    else:
+        queue_file_path = args.queuefile
+
+    file = open(queue_file_path, 'a+')
+    file.seek(0)
 
     ignored_lines = ['#', '-', '\n']
     queue_threads = [line.strip() for line in file if line[0] not in ignored_lines]
