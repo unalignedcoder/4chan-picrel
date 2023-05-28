@@ -1,7 +1,7 @@
 4chan-picrel
 ================
 This is a fork of the [4chan-downloader](https://github.com/Exceen/4chan-downloader) script. 
-It has all functionality of the original script, but it remembers which files were downloaded in each thread, therefore making montioring thread unnecessary and optional.
+It has all functionality of the original script, but it remembers which files were downloaded in each thread, therefore making continuosly montioring a thread optional.
 
 ### Download Script ###
 
