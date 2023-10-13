@@ -7,6 +7,10 @@ It retains most functionality from the original script, with considerable improv
 - It solves a redundancy of the original script, that by default duplicated all threads;
 - It makes the documentation clearer.
 
+### Install ###
+- Have Python
+- Install requirements (see below)
+
 ### GUI Interface ###
 
 Double-click on `picrel-gui.py` and you are good to go. 
