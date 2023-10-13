@@ -8,6 +8,7 @@ import json
 
 log = logging.getLogger('picrel')
 workpath = os.path.dirname(os.path.realpath(__file__))
+downldir = '' #user can have the 'download' folder here
 
 args = None
 
@@ -40,7 +41,7 @@ def main():
     thread = args.thread[0].strip()
 
     if thread[:4].lower() == 'http':
-        download_thread(thread, args)
+        download_thread(thread, args, [])
     else:
         download_from_file(thread)
 
@@ -76,10 +77,10 @@ def download_thread(thread_link, args, downloaded_files):
     if len(thread_link.split('/')) > 6:
         thread_tmp = thread_link.split('/')[6].split('#')[0]
 
-        if args.use_names or os.path.exists(os.path.join(workpath, 'downloads', board, thread_tmp)):                
+        if args.use_names or os.path.exists(os.path.join(workpath, downldir, board, thread_tmp)):                
             thread = thread_tmp
 
-    thread_folder = os.path.join(workpath, 'downloads', board, thread)
+    thread_folder = os.path.join(workpath, downldir, board, thread)
     downloaded_files = load_downloaded_files(thread_folder)  # Load the downloaded files from the JSON file
     new_files_downloaded = False  # Flag to track if new files were downloaded
 
@@ -92,7 +93,7 @@ def download_thread(thread_link, args, downloaded_files):
             regex_result_len = len(regex_result)
             regex_result_cnt = 1
 
-            directory = os.path.join(workpath, 'downloads', board, thread)
+            directory = os.path.join(workpath, downldir, board, thread)
             if not os.path.exists(directory):
                 os.makedirs(directory)
 
@@ -158,9 +159,14 @@ def download_from_file(filename):
     running_links = []
     while True:
         processes = []
-        #queue_file = os.path.join(os.path.abspath(workpath), filename)
-        queue_file = workpath + filename
-        #log.info('your queue path:' + queue_file)
+        
+        if os.path.isabs(filename):
+            queue_file = filename
+        else:
+            queue_file = os.path.join(workpath, filename)
+            
+        log.info('your queue path:' + queue_file)
+        
         for link in [_f for _f in [line.strip() for line in open(queue_file) if line[:4] == 'http'] if _f]:
             if link not in running_links:
                 running_links.append(link)
@@ -168,7 +174,7 @@ def download_from_file(filename):
 
             board = link.split('/')[3]
             thread = link.split('/')[5].split('#')[0]
-            thread_folder = os.path.join(workpath, 'downloads', board, thread)
+            thread_folder = os.path.join(workpath, downldir, board, thread)
 
             downloaded_files = load_downloaded_files(thread_folder)
             process = Process(target=call_download_thread, args=(link, args, downloaded_files))
