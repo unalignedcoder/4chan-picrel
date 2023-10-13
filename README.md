@@ -66,7 +66,7 @@ Double click on `queue-creator-gui.py` and you are good to go.
 
 ![image](https://github.com/unalignedcoder/4chan-picrel/assets/16850566/7537e9ca-90fb-4ac6-8a3e-28e7b66997bf)
 
-This script generates a queue list text file, which can be used by the main script to simultaneusly download media files from several threads. The user can specify several criteria to generate the list.
+This script searches 4chan for your query and generates a queue list text file, which can be used by the main script to simultaneusly download media files from several threads. The user can specify several criteria to generate the list.
 
 ```
 usage: python queue-creator.py [-q] {search term} [-f] {file name} [-b] {board name} [-n] {name of the search} 
