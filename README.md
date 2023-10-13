@@ -9,7 +9,7 @@ It retains most functionality from the original script, with considerable improv
 
 ## Install ##
 - Have Python
-- Install [requirements](https://github.com/unalignedcoder/4chan-picrel/blob/master/README.md#requirements).
+- Install [requirements](#requirements).
 
 ## GUI Interface ##
 
