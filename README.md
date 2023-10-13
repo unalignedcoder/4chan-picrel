@@ -1,10 +1,21 @@
 4chan-picrel
 ================
 This is a fork of the [4chan-downloader](https://github.com/Exceen/4chan-downloader) script. 
-It retains most functionality from the original script, with considerable improvements. 
-It records which files have been downloaded in each thread to a json file, therefore making continuosly montioring a thread optional.
-It also solves a redundancy of the original script, that by default duplicated all threads. 
-It aims to quickly solve other issues as well, including making the documentation clearer.
+It retains most functionality from the original script, with considerable improvements:
+- It adds a GUI interface for ease of use;
+- It records which files have been downloaded in each thread to a json file, therefore making continuosly montioring a thread optional;
+- It solves a redundancy of the original script, that by default duplicated all threads;
+- It makes the documentation clearer.
+
+### GUI Interface ###
+
+Double-click on `picrel-gui.py` and you are good to go. 
+
+![image](https://github.com/unalignedcoder/4chan-picrel/assets/16850566/c3d6c6d1-e37b-475b-bdc9-26fdb63807d0)
+
+This is based on [PySimpleGUI](https://github.com/PySimpleGUI/PySimpleGUI). 
+It interacts with the main download script allowing the user to avoid commandline instructions.
+The script can be also used directly, of course, as preferred.
 
 ### Main Download Script ###
 
@@ -14,7 +25,7 @@ The main script is called **picrel.py**.
 usage: python picrel.py [-h] [-c] [-d] [-l] [-n] [-r] [-t] [-m] thread/queue
 
 positional arguments:
-  thread              url of the thread (or queue text file which contains one url per line)
+  thread/queue              url of the thread (or queue text file which contains one url per line)
 
 optional arguments:
   -h, --help          show this help message and exit
@@ -42,11 +53,18 @@ The queue file can also be generated via the [Queue List Creator](https://github
 
 ### Requirements ###
 
-This script can be called using the default python libraries. Only if you want to use the `--use-names` or `--title` parameters you have to install the following dependencies:
-* Beautifulsoup4 >= 4.12.2 `pip install beautifulsoup4`
-* Django >= 4.2.1 `pip install django`
+In order to use the GUI, you need to install `PySimpleGUI`.
+
+The script can be called using the default python libraries. Only if you want to use the `--use-names` or `--title` parameters you need to install `Beautifulsoup4` and `Django`.
+
+Best way to go about it is to open terminal from the script directory and run:
+`pip install -r requirements.txt`
 
 ### Queue List Creator ###
+
+Double click on `queue-creator-gui.py` and you are good to go.
+
+![image](https://github.com/unalignedcoder/4chan-picrel/assets/16850566/7537e9ca-90fb-4ac6-8a3e-28e7b66997bf)
 
 This script generates a queue list text file, which can be used by the main script to simultaneusly download media files from several threads. The user can specify several criteria to generate the list.
 
