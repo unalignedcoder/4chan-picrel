@@ -59,9 +59,9 @@ The queue file can also be generated via the [Queue List Creator](https://github
 
 In order to use the GUI, you need to install `PySimpleGUI`.
 
-The script can be called using the default python libraries. Only if you want to use the `--use-names` or `--title` parameters you need to install `Beautifulsoup4` and `Django`.
+The `Beautifulsoup4` and `Django` libraries are also required.
 
-Best way to go about it is to open terminal from the script directory and run:
+Best way to go about this is to open terminal from the script directory and run:
 `pip install -r requirements.txt`
 
 ### Queue List Creator ###
