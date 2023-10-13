@@ -7,11 +7,11 @@ It retains most functionality from the original script, with considerable improv
 - It solves a redundancy of the original script, that by default duplicated all threads;
 - It makes the documentation clearer.
 
-### Install ###
+## Install ##
 - Have Python
 - Install [requirements](https://github.com/unalignedcoder/4chan-picrel/blob/master/README.md#requirements).
 
-### GUI Interface ###
+## GUI Interface ##
 
 Double-click on `picrel-gui.py` and you are good to go. 
 
@@ -21,7 +21,7 @@ This is based on [PySimpleGUI](https://github.com/PySimpleGUI/PySimpleGUI).
 It interacts with the main download script allowing the user to avoid commandline instructions.
 The script can be also used directly, of course, as preferred.
 
-### Main Download Script ###
+## Main Download Script ##
 
 The main script is called **picrel.py**.
 
@@ -55,7 +55,7 @@ You can parse a queue file instead of a thread url. In this file you can put as 
 
 The queue file can also be generated via the [Queue List Creator](https://github.com/unalignedcoder/4chan-picrel/blob/master/README.md#queue-list-creator). See below.
 
-### Requirements ###
+## Requirements ##
 
 In order to use the GUI, you need to install `PySimpleGUI`.
 
@@ -64,7 +64,7 @@ The `Beautifulsoup4` and `Django` libraries are also required.
 Best way to go about this is to open terminal from the script directory and run:
 `pip install -r requirements.txt`
 
-### Queue List Creator ###
+## Queue List Creator ##
 
 Double click on `queue-creator-gui.py` and you are good to go.
 
